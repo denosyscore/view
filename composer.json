@@ -9,9 +9,9 @@
   },
   "autoload": {
     "psr-4": {
-      "Denosys\\\\View\\\\": "src/View/",
-      "Denosys\\\\View\\\\Form\\\\": "src/Form/",
-      "Denosys\\\\View\\\\ValueObjects\\\\": "src/ValueObjects/"
+      "Denosys\\View\\": "src/View/",
+      "Denosys\\View\\Form\\": "src/Form/",
+      "Denosys\\View\\ValueObjects\\": "src/ValueObjects/"
     }
   },
   "config": {
