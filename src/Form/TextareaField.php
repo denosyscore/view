@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Form;
+namespace Denosys\View\Form;
 
 use Stringable;
 

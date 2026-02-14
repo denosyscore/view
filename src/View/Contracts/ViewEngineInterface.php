@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Contracts;
+namespace Denosys\View\Contracts;
 
 interface ViewEngineInterface
 {

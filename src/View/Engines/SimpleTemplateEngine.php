@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Engines;
+namespace Denosys\View\Engines;
 
-use CFXP\Core\View\Contracts\ViewEngineInterface;
-use CFXP\Core\View\Template;
+use Denosys\View\Contracts\ViewEngineInterface;
+use Denosys\View\Template;
 
 /**
  * Simple Template Engine - Pure PHP templates with no magic directives.

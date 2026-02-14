@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Compilers;
+namespace Denosys\View\Compilers;
 
 /**
  * Registry and pipeline for template compilers.

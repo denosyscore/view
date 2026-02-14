@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\ValueObjects;
+namespace Denosys\View\ValueObjects;
 
 use InvalidArgumentException;
 

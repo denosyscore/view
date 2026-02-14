@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Engines;
+namespace Denosys\View\Engines;
 
-use CFXP\Core\View\Contracts\ViewEngineInterface;
+use Denosys\View\Contracts\ViewEngineInterface;
 use RuntimeException;
 
 /**

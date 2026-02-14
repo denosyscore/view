@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Form;
+namespace Denosys\View\Form;
 
 /**
  * Static factory for creating form fields.

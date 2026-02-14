@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Directives;
+namespace Denosys\View\Directives;
 
-use CFXP\Core\View\Contracts\DirectiveInterface;
+use Denosys\View\Contracts\DirectiveInterface;
 use InvalidArgumentException;
 
 /**
@@ -363,7 +363,7 @@ public function all(): array
 
         // @vite directive (for Vite assets with HMR)
         $this->register('vite', function (string $expression): string {
-            return "<?= (new \\CFXP\\Core\\View\\Vite())({$expression}) ?>";
+            return "<?= (new \\Denosys\\View\\Vite())({$expression}) ?>";
         });
 
         // Validation error directives

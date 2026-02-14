@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View;
+namespace Denosys\View;
 
-use CFXP\Core\Container\ContainerInterface;
-use CFXP\Core\ServiceProviderInterface;
-use CFXP\Core\Exceptions\NotFoundException;
+use Denosys\Container\ContainerInterface;
+use Denosys\Contracts\ServiceProviderInterface;
+use Denosys\Container\Exceptions\NotFoundException;
 use Psr\EventDispatcher\EventDispatcherInterface;
-use CFXP\Core\Exceptions\ContainerResolutionException;
+use Denosys\Container\Exceptions\ContainerResolutionException;
 
 /**
  * View Service Provider
@@ -31,7 +31,7 @@ class ViewServiceProvider implements ServiceProviderInterface
         $viewEngine->enableCache($cacheDir);
 
         $viewEngine->addGlobals([
-            'app_name' => $container->has('app.name') ? $container->get('app.name') : 'CFXPrimes',
+            'app_name' => $container->has('app.name') ? $container->get('app.name') : 'Denosys',
             'app_url' => $container->has('app.url') ? $container->get('app.url') : 'http://localhost',
             'app_env' => $container->has('app.env') ? $container->get('app.env') : 'production',
             'app_debug' => (bool)($container->has('app.debug') ? $container->get('app.debug') : false),

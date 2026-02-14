@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View;
+namespace Denosys\View;
 
 /**
  * Vite asset helper for PHP.

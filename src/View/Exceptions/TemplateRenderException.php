@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Exceptions;
+namespace Denosys\View\Exceptions;
 
 use RuntimeException;
 use Throwable;

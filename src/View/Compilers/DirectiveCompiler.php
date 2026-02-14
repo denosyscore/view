@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Compilers;
+namespace Denosys\View\Compilers;
 
-use CFXP\Core\View\Directives\DirectiveRegistry;
+use Denosys\View\Directives\DirectiveRegistry;
 
 /**
  * Compiles @directives using the DirectiveRegistry.

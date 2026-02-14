@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View;
+namespace Denosys\View;
 
-use CFXP\Core\View\Contracts\ViewEngineInterface;
-use CFXP\Core\View\Engines\PhpEngine;
-use CFXP\Core\View\Engines\SimpleTemplateEngine;
+use Denosys\View\Contracts\ViewEngineInterface;
+use Denosys\View\Engines\PhpEngine;
+use Denosys\View\Engines\SimpleTemplateEngine;
 use InvalidArgumentException;
 
 class ViewEngine implements ViewEngineInterface

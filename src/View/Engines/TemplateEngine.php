@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\View\Engines;
+namespace Denosys\View\Engines;
 
-use CFXP\Core\View\Contracts\ViewEngineInterface;
-use CFXP\Core\View\Directives\DirectiveRegistry;
-use CFXP\Core\View\Exceptions\TemplateCompilationException;
-use CFXP\Core\View\Exceptions\TemplateRenderException;
+use Denosys\View\Contracts\ViewEngineInterface;
+use Denosys\View\Directives\DirectiveRegistry;
+use Denosys\View\Exceptions\TemplateCompilationException;
+use Denosys\View\Exceptions\TemplateRenderException;
 use RuntimeException;
 
 /**
