@@ -114,6 +114,7 @@ class PhpEngine implements ViewEngineInterface
             $possibilities = [
                 $basePath . '/' . $templatePath,
                 $basePath . '/' . $templatePath . '.php',
+                $basePath . '/' . $templatePath . '.phtml',
             ];
 
             foreach ($possibilities as $path) {

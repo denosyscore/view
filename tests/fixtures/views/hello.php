@@ -1,0 +1,1 @@
+@if(true)<b>{{ $name }}</b>@endif

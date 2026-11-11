@@ -6,7 +6,7 @@ namespace Denosys\View;
 
 use Denosys\View\Contracts\ViewEngineInterface;
 use Denosys\View\Engines\PhpEngine;
-use Denosys\View\Engines\SimpleTemplateEngine;
+use Denosys\View\Engines\TemplateEngine;
 use InvalidArgumentException;
 
 class ViewEngine implements ViewEngineInterface
@@ -189,6 +189,7 @@ class ViewEngine implements ViewEngineInterface
                 $basePath . '/' . $templatePath,
                 $basePath . '/' . $templatePath . '.php',
                 $basePath . '/' . $templatePath . '.tpl',
+                $basePath . '/' . $templatePath . '.phtml',
             ];
 
             foreach ($possibilities as $path) {
@@ -220,6 +221,6 @@ class ViewEngine implements ViewEngineInterface
     private function registerDefaultEngines(): void
     {
         $this->engine('php', new PhpEngine($this->basePaths));
-        $this->engine('template', new SimpleTemplateEngine($this->basePaths));
+        $this->engine('template', new TemplateEngine($this->basePaths));
     }
 }

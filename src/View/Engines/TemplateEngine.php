@@ -253,11 +253,17 @@ class TemplateEngine implements ViewEngineInterface
         $this->validateCompiledTemplate($compiled, $templatePath);
 
         // Ensure cache directory exists
-        if ($this->cacheDir && !is_dir($this->cacheDir)) {
-            mkdir($this->cacheDir, 0755, true);
+        if ($this->cacheDir && !is_dir($this->cacheDir) && !@mkdir($this->cacheDir, 0755, true) && !is_dir($this->cacheDir)) {
+            throw new RuntimeException("Unable to create the template cache directory: {$this->cacheDir}");
         }
 
-        file_put_contents($compiledPath, $compiled);
+        // Write to a temporary file and rename it, so a concurrent request never
+        // includes a partially written template.
+        $temporary = $compiledPath . '.' . bin2hex(random_bytes(6)) . '.tmp';
+        if (file_put_contents($temporary, $compiled) === false || !rename($temporary, $compiledPath)) {
+            @unlink($temporary);
+            throw new RuntimeException("Unable to write compiled template: {$compiledPath}");
+        }
     }
 
     /**
@@ -265,9 +271,10 @@ class TemplateEngine implements ViewEngineInterface
      */
     private function getCompiledPath(string $templatePath): string
     {
-        if (!$this->cacheDir) {
-            return $templatePath; // No caching
-        }
+        // Templates are always compiled. Without a configured cache directory the
+        // compiled file goes to the system temp directory, never beside the source.
+        $this->cacheDir ??= sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'denosys-views-'
+            . (function_exists('posix_geteuid') ? posix_geteuid() : md5(get_current_user()));
 
         $hash = hash('md5', $templatePath);
         return $this->cacheDir . '/template_' . $hash . '.php';
