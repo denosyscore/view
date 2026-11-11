@@ -18,7 +18,11 @@
 - `TemplateEngine` always compiles templates. Without a cache directory it
   previously included the uncompiled source, printing directives and
   unescaped output. The default cache directory is a per-user folder in the
-  system temp directory.
+  system temp directory, created with mode 0700. It is refused if it is a
+  symlink, owned by another user, or writable by other users, because a
+  predictable temp path could otherwise be pre-created by another local user
+  to plant compiled templates. Configure an application-owned cache directory
+  in production.
 - Compiled templates are written to a temporary file and renamed, so
   concurrent requests never include a partially written file.
 

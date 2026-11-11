@@ -267,14 +267,61 @@ class TemplateEngine implements ViewEngineInterface
     }
 
     /**
+     * The per-user temp directory used when no cache directory is configured.
+     */
+    public static function defaultCacheDirectory(): string
+    {
+        $owner = function_exists('posix_geteuid') ? (string) posix_geteuid() : md5(get_current_user());
+
+        return sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'denosys-views-' . $owner;
+    }
+
+    /**
+     * Create the default directory privately, and refuse it unless it is a real
+     * directory owned by this user that no other user can write to. A temp path is
+     * predictable, so another local user could otherwise pre-create it and plant
+     * compiled templates that this process would include.
+     */
+    private static function secureDefaultCacheDirectory(): string
+    {
+        $directory = self::defaultCacheDirectory();
+
+        if (!is_dir($directory) && !@mkdir($directory, 0700, true) && !is_dir($directory)) {
+            throw new RuntimeException("Unable to create the template cache directory: {$directory}");
+        }
+
+        clearstatcache(true, $directory);
+        $insecure = is_link($directory)
+            || !is_dir($directory)
+            || (fileperms($directory) & 0022) !== 0
+            || (function_exists('posix_geteuid') && fileowner($directory) !== posix_geteuid());
+
+        // Nobody else could have written to an owned directory without group or world
+        // write access, so it is safe to tighten read access on it.
+        if (!$insecure && (fileperms($directory) & 0077) !== 0) {
+            chmod($directory, 0700);
+        }
+
+        if ($insecure) {
+            throw new RuntimeException(
+                "Refusing to use the template cache directory {$directory}: it must be a directory owned by "
+                . 'the current user that no other user can write to. Configure a cache directory explicitly.'
+            );
+        }
+
+        return $directory;
+    }
+
+    /**
      * Get compiled template path
      */
     private function getCompiledPath(string $templatePath): string
     {
         // Templates are always compiled. Without a configured cache directory the
-        // compiled file goes to the system temp directory, never beside the source.
-        $this->cacheDir ??= sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'denosys-views-'
-            . (function_exists('posix_geteuid') ? posix_geteuid() : md5(get_current_user()));
+        // compiled file goes to a private per-user temp directory, never beside the source.
+        if ($this->cacheDir === null) {
+            $this->cacheDir = self::secureDefaultCacheDirectory();
+        }
 
         $hash = hash('md5', $templatePath);
         return $this->cacheDir . '/template_' . $hash . '.php';

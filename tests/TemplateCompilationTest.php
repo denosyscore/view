@@ -36,6 +36,33 @@ final class TemplateCompilationTest extends TestCase
         self::assertSame('<b>&lt;i&gt;x&lt;/i&gt;</b>', $engine->render('hello', ['name' => '<i>x</i>']));
     }
 
+    public function testDefaultCacheDirectoryIsPrivateToTheCurrentUser(): void
+    {
+        $engine = new TemplateEngine([$this->views]);
+        $engine->render('hello', ['name' => 'x']);
+
+        $directory = TemplateEngine::defaultCacheDirectory();
+        self::assertDirectoryExists($directory);
+        self::assertSame(0, fileperms($directory) & 0077, 'Default cache directory must not be group or world accessible.');
+    }
+
+    public function testDefaultCacheDirectoryIsRefusedWhenOthersCanWriteToIt(): void
+    {
+        $directory = TemplateEngine::defaultCacheDirectory();
+        if (!is_dir($directory)) {
+            mkdir($directory, 0700, true);
+        }
+        $original = fileperms($directory) & 0777;
+        chmod($directory, 0777);
+
+        try {
+            $this->expectException(\RuntimeException::class);
+            (new TemplateEngine([$this->views]))->render('hello', ['name' => 'x']);
+        } finally {
+            chmod($directory, $original);
+        }
+    }
+
     public function testTemplateEngineWithoutACacheDirectoryNeverWritesBesideTheTemplate(): void
     {
         $before = file_get_contents($this->views . '/hello.php');
