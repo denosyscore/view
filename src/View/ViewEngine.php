@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Denosys\View;
 
+use Denosys\Contracts\View\TemplateRenderer;
 use Denosys\View\Contracts\ViewEngineInterface;
 use Denosys\View\Engines\PhpEngine;
 use Denosys\View\Engines\TemplateEngine;
 use InvalidArgumentException;
 
-class ViewEngine implements ViewEngineInterface
+class ViewEngine implements ViewEngineInterface, TemplateRenderer
 {
     /**
      * Base template paths for engines that need them.
