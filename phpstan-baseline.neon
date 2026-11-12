@@ -1,0 +1,337 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot call method compile\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/View/Compilers/CompilerPipeline.php
+
+		-
+			message: '#^Method Denosys\\View\\Compilers\\CompilerPipeline\:\:compile\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Compilers/CompilerPipeline.php
+
+		-
+			message: '#^Parameter \#2 \$callback of function usort expects callable\(mixed, mixed\)\: int, Closure\(Denosys\\View\\Compilers\\CompilerInterface, Denosys\\View\\Compilers\\CompilerInterface\)\: int\<\-1, 1\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Compilers/CompilerPipeline.php
+
+		-
+			message: '#^Property Denosys\\View\\Compilers\\CompilerPipeline\:\:\$compilers \(array\<string, mixed\>\) does not accept array\<int\|string, mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Compilers/CompilerPipeline.php
+
+		-
+			message: '#^Property Denosys\\View\\Compilers\\CompilerPipeline\:\:\$compilers \(array\<string, mixed\>\) does not accept list\<mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Compilers/CompilerPipeline.php
+
+		-
+			message: '#^Method Denosys\\View\\Compilers\\EchoCompiler\:\:compile\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Compilers/EchoCompiler.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function preg_replace expects array\<float\|int\|string\>\|string, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/View/Compilers/EchoCompiler.php
+
+		-
+			message: '#^Method Denosys\\View\\Directives\\DirectiveRegistry\:\:compile\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Method Denosys\\View\\Directives\\DirectiveRegistry\:\:compileBladeSyntax\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Method Denosys\\View\\Directives\\DirectiveRegistry\:\:get\(\) should return \(callable\(\)\: mixed\)\|Denosys\\View\\Contracts\\DirectiveInterface but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Method Denosys\\View\\Directives\\DirectiveRegistry\:\:getDefaultPattern\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Parameter \#2 \$callback of function preg_replace_callback expects callable\(array\<string\>\)\: string, Closure\(mixed\)\: mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function preg_replace expects array\<float\|int\|string\>\|string, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Parameter \#3 \$subject of function preg_replace_callback expects array\<float\|int\|string\>\|string, string\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Trying to invoke mixed but it''s not a callable\.$#'
+			identifier: callable.nonCallable
+			count: 1
+			path: src/View/Directives/DirectiveRegistry.php
+
+		-
+			message: '#^Binary operation "\." between mixed and ''/'' results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 4
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Method Denosys\\View\\Engines\\PhpEngine\:\:getAllPaths\(\) should return array\<string, mixed\> but returns array\<int\<0, max\>\|string, mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Parameter \#2 \$array of function implode expects array\<string\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\Engines\\PhpEngine\:\:\$paths \(array\<string, mixed\>\) does not accept array\<int\|string, mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\Engines\\PhpEngine\:\:\$paths \(array\<string, mixed\>\) does not accept array\<mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\Engines\\PhpEngine\:\:\$paths \(array\<string, mixed\>\) does not accept array\<string\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Engines/PhpEngine.php
+
+		-
+			message: '#^Method Denosys\\View\\Engines\\TemplateEngine\:\:getOriginalTemplatePath\(\) is unused\.$#'
+			identifier: method.unused
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Method Denosys\\View\\Engines\\TemplateEngine\:\:simplifyPhpErrorMessage\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Parameter \#1 \$template of method Denosys\\View\\Directives\\DirectiveRegistry\:\:compile\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Parameter \#2 \$subject of function preg_match expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\Engines\\TemplateEngine\:\:\$layoutData \(array\<string, string\>\) does not accept array\<string, mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\Engines\\TemplateEngine\:\:\$sections \(array\<string, string\>\) does not accept array\<string, bool\|string\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Engines/TemplateEngine.php
+
+		-
+			message: '#^Binary operation "/" between int\<1, max\> and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: src/View/Exceptions/TemplateRenderException.php
+
+		-
+			message: '#^Method Denosys\\View\\Exceptions\\TemplateRenderException\:\:simplifyErrorMessage\(\) should return string but returns string\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Exceptions/TemplateRenderException.php
+
+		-
+			message: '#^Parameter \#1 \$string of function strlen expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Exceptions/TemplateRenderException.php
+
+		-
+			message: '#^Parameter \#1 \$string of function substr expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/Exceptions/TemplateRenderException.php
+
+		-
+			message: '#^Parameter \#1 \$value of function count expects array\|Countable, list\<string\>\|false given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/View/Exceptions/TemplateRenderException.php
+
+		-
+			message: '#^Call to function method_exists\(\) with Denosys\\View\\Contracts\\ViewEngineInterface and ''exists'' will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/View/ViewEngine.php
+
+		-
+			message: '#^Property Denosys\\View\\ViewEngine\:\:\$basePaths \(array\<int\|string, string\>\) does not accept array\<string, mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/ViewEngine.php
+
+		-
+			message: '#^Binary operation "\." between mixed and ''/''\|''\\\\'' results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 3
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Call to method alias\(\) on an unknown class Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Call to method get\(\) on an unknown class Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 8
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Call to method has\(\) on an unknown class Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 4
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Call to method singleton\(\) on an unknown class Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Cannot call method addPath\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^PHPDoc tag @throws with type Denosys\\Container\\Exceptions\\ContainerResolutionException is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^PHPDoc tag @throws with type Denosys\\Container\\Exceptions\\ContainerResolutionException\|Denosys\\Container\\Exceptions\\NotFoundException is not subtype of Throwable$#'
+			identifier: throws.notThrowable
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$basePaths of class Denosys\\View\\ViewEngine constructor expects array\<string, mixed\>, array\<int, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$viewEngine of method Denosys\\View\\ViewServiceProvider\:\:registerCustomDirectives\(\) expects Denosys\\View\\ViewEngine, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Parameter \$container of method Denosys\\View\\ViewServiceProvider\:\:boot\(\) has invalid type Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 2
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Parameter \$container of method Denosys\\View\\ViewServiceProvider\:\:register\(\) has invalid type Denosys\\Container\\ContainerInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Part \$expression \(mixed\) of encapsed string cannot be cast to string\.$#'
+			identifier: encapsedStringPart.nonString
+			count: 4
+			path: src/View/ViewServiceProvider.php
+
+		-
+			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: src/View/Vite.php
+
+		-
+			message: '#^Function env not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: src/View/Vite.php
+
+		-
+			message: '#^Function public_path not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: src/View/Vite.php
+
+		-
+			message: '#^Method Denosys\\View\\Vite\:\:getManifest\(\) should return array\<string, array\<string, mixed\>\> but returns array\<mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/View/Vite.php
+
+		-
+			message: '#^Parameter \#1 \$filename of function file_exists expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/View/Vite.php
+
+		-
+			message: '#^Parameter \#1 \$filename of function file_get_contents expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 2
+			path: src/View/Vite.php
+
+		-
+			message: '#^Parameter \#3 \.\.\.\$values of function sprintf expects bool\|float\|int\|string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 3
+			path: src/View/Vite.php
+
+		-
+			message: '#^Possibly invalid array key type mixed\.$#'
+			identifier: offsetAccess.invalidOffset
+			count: 2
+			path: src/View/Vite.php
+
+		-
+			message: '#^Static property Denosys\\View\\Vite\:\:\$manifest \(array\<string, array\<string, mixed\>\>\|null\) does not accept array\<mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/View/Vite.php
