@@ -1,5 +1,7 @@
 # denosyscore/view
 
+> **Read-only split.** This package is developed in [denosyscore/framework](https://github.com/denosyscore/framework) under `packages/view`. Open issues and pull requests there.
+
 View engine, directives, forms, and value objects
 
 ## Installation
@@ -46,9 +48,3 @@ echo $view->render('welcome', ['name' => '<Ada>', 'admin' => true]), "\n";
 
 composer validate --strict
 find src -type f -name '*.php' -print0 | xargs -0 -n1 php -l
-
-## CI Workflows
-
-- CI: composer validation + PHP syntax lint on push and pull requests.
-- Release: GitHub release publication on semantic version tags.
-- Dependabot: weekly Composer dependency update checks.
